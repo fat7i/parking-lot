@@ -82,7 +82,7 @@ class ParkingService
      * @throws ParkingUnavailableException
      * @return Parkable
      */
-    function park(Parkable $parkable, Lot $lot): Parkable
+    public function park(Parkable $parkable, Lot $lot): Parkable
     {
         try {
 
@@ -110,7 +110,7 @@ class ParkingService
      * @return Parkable
      * @throws ParkingUnavailableException
      */
-    function getParkable(string $plate)
+    public function getParkable(string $plate)
     {
         try {
             return $this->getParkableTask
@@ -128,7 +128,7 @@ class ParkingService
      * @return Parkable
      * @throws ParkingUnavailableException
      */
-    function getOrCreateParkable(ParkableInterface $parkableType, string $plate)
+    public function getOrCreateParkable(ParkableInterface $parkableType, string $plate)
     {
         try {
             return $this->getOrCreateParkableTask
@@ -146,7 +146,7 @@ class ParkingService
      * @return Lot
      * @throws ParkingUnavailableException
      */
-    function getAvailableLot(ParkableInterface $parkableType)
+    public function getAvailableLot(ParkableInterface $parkableType)
     {
         try {
             return $this->getLotsTask
@@ -162,7 +162,7 @@ class ParkingService
      * @param string $plate
      * @throws DepartingFailedException
      */
-    function depart(string $plate)
+    public function depart(string $plate)
     {
         try {
 
@@ -189,7 +189,7 @@ class ParkingService
      * @return mixed
      * @throws LotsListFailedException
      */
-    function getListLots()
+    public function getListLots()
     {
         try {
             return $this->getLotsListTask->run();
